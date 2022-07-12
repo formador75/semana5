@@ -56,11 +56,7 @@ public class SqliteClass {
        System.out.println("se creo la tabla");
     }
     
-    
-    
     public void insertDatos(){
-    
-        
           Connection c = null;
        Statement stmt = null;
        try {
@@ -79,13 +75,45 @@ public class SqliteClass {
        } 
     
        System.out.println("se inserto el dato en la tabla");
-    
-    
     }
   
     
-     public void llamarDatos(){
+     public void llamarDatos(){ 
+           Connection c = null;
+       Statement stmt = null;
+       try {
+       Class.forName("org.sqlite.JDBC");
+       c = DriverManager.getConnection("jdbc:sqlite:test.db");
+           System.out.println("La conexion fue un exito");
+           
+         stmt = c.createStatement();
+         String sql = "select * from COMPANY"; 
+          
+           ResultSet rs  = stmt.executeQuery(sql);
+           
+           while (rs.next()){
+           int id = rs.getInt("ID");
+           String name = rs.getString("NAME");
+           int age = rs.getInt("AGE");
+           String address = rs.getString("ADDRESS");
+           float salary = rs.getFloat("SALARY");
+           System.out.println("id=" + id);
+           System.out.println("name=" + name);
+           System.out.println("age=" + age);
+           System.out.println("address=" + address);
+           System.out.println("salary=" + salary);
+           
+           }
+           
+           stmt.close();
+           c.close();
+           
+       }catch (Exception e){
+       System.err.println(e.getClass().getName() + ": falta la clase " + e.getMessage() );
+       } 
     
+     
+      
     
     
     }
