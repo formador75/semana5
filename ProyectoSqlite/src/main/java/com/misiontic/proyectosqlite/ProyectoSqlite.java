@@ -5,6 +5,8 @@
 
 package com.misiontic.proyectosqlite;
 
+import java.sql.*;
+
 /**
  *
  * @author jorge
@@ -12,6 +14,11 @@ package com.misiontic.proyectosqlite;
 public class ProyectoSqlite {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       
+        SqliteClass s = new SqliteClass();
+        s.crearConexion();
+        s.crearTabla();
+        
+        
     }
 }
