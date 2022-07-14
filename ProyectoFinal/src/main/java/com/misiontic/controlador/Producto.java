@@ -10,27 +10,25 @@ package com.misiontic.controlador;
  */
 public class Producto {
     
-    private String nombre;
     private int id;
+    private String nombre;
     private double temperatura;
     private double valorBase;
 
     public Producto() {
     }
 
-    public Producto(String nombre, int id, double temperatura, double valorBase) {
+    public Producto(String nombre, double temperatura, double valorBase) {
         this.nombre = nombre;
-        this.id = id;
         this.temperatura = temperatura;
         this.valorBase = valorBase;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
+    public Producto(int id, String nombre, double temperatura, double valorBase) {
+        this.id = id;
         this.nombre = nombre;
+        this.temperatura = temperatura;
+        this.valorBase = valorBase;
     }
 
     public int getId() {
@@ -39,6 +37,14 @@ public class Producto {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public double getTemperatura() {
@@ -57,12 +63,11 @@ public class Producto {
         this.valorBase = valorBase;
     }
 
-    
     @Override
     public String toString() {
-        return this.getClass().getName() + "{" + "nombre=" + nombre + ", id=" + id + ", temperatura=" + temperatura + ", valorBase=" + valorBase + '}';
+        return this.getClass().getName() + "{" + "id=" + id + ", nombre=" + nombre + ", temperatura=" + temperatura + ", valorBase=" + valorBase + '}';
     }
-  
+    
     
     
 }
