@@ -16,9 +16,10 @@ public class ProyectoSqlite {
     public static void main(String[] args) {
        
         SqliteClass s = new SqliteClass();
-        s.crearConexion();
-        s.crearTabla();
-        
+       
+       
+       
+        s.llamarDatos();
         
     }
 }

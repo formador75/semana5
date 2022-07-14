@@ -65,7 +65,7 @@ public class SqliteClass {
            System.out.println("La conexion fue un exito");
            
          stmt = c.createStatement();
-         String sql = "insert into COMPANY(ID, NAME, AGE, ADDRESS, SALARY) VALUES (1, ´UIS´, 'cll 7 # 11-22', 10000000 )"; 
+         String sql = "insert into COMPANY(ID, NAME, AGE, ADDRESS, SALARY) VALUES (2, 'carlos', 33 ,'cll 7 # 11-22', 10000000 )"; 
            stmt.executeUpdate(sql);
            stmt.close();
            c.close();
@@ -85,12 +85,9 @@ public class SqliteClass {
        Class.forName("org.sqlite.JDBC");
        c = DriverManager.getConnection("jdbc:sqlite:test.db");
            System.out.println("La conexion fue un exito");
-           
          stmt = c.createStatement();
          String sql = "select * from COMPANY"; 
-          
-           ResultSet rs  = stmt.executeQuery(sql);
-           
+           ResultSet rs  = stmt.executeQuery(sql);      
            while (rs.next()){
            int id = rs.getInt("ID");
            String name = rs.getString("NAME");
