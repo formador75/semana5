@@ -8,6 +8,7 @@ package com.misiontic.proyectofinal;
 import com.misiontic.controlador.Producto;
 import com.misiontic.modelo.MysqlProducto;
 import com.misiontic.modelo.SqliteProducto;
+import com.misiontic.vista.VistaProyecto;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -18,11 +19,7 @@ import javax.swing.JOptionPane;
 public class ProyectoFinal {
 
     public static void main(String[] args) {
-     MysqlProducto db = new MysqlProducto();
-      
-     Producto p = new Producto(2, "dolex3", 25, 3000);
-     db.insertarProducto(p);
-       System.out.println(db.leerProductos());
-       
+    VistaProyecto vp = new VistaProyecto();
+       vp.setVisible(true);
     }
 }
